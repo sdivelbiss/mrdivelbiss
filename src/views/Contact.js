@@ -78,32 +78,32 @@ const StyledTextArea = styled.textarea`
 
 export default function Contact() {
   return (
-    <StyledForm method="post" data-netlify="true" netlify netlify-honeypot="bot-field">
+    <StyledForm method="post" name="contact">
+      <input type="hidden" name="form-name" value="contact" />
       <div>
         <div>
           <StyledLabel>First Name</StyledLabel>
-          <StyledInput type="text" autocomplete="off" />
+          <StyledInput type="text" name="firstname" autocomplete="off" />
         </div>
 
         <div>
           <StyledLabel>Last Name</StyledLabel>
-          <StyledInput type="text" autocomplete="off" />
+          <StyledInput type="text" name="lastname" autocomplete="off" />
         </div>
       </div>
 
       <div>
         <StyledLabel>Email Address</StyledLabel>
-        <StyledInput type="email" autocomplete="off" />
+        <StyledInput type="email" name="email" autocomplete="off" />
       </div>
       <div>
         <StyledLabel>Message</StyledLabel>
-        <StyledTextArea autocomplete="off" />
+        <StyledTextArea name="message" autocomplete="off" />
       </div>
 
       <StyledButton type="submit" className="button button-block">
         Submit
       </StyledButton>
-      <input type="hidden" name="form-name" value="contact" />
     </StyledForm>
   );
 }
