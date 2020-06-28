@@ -9,6 +9,7 @@ import Experience from './views/Experience';
 import Tech from './views/Tech';
 import Contact from './views/Contact';
 import Projects from './views/Projects';
+import Resume from './views/Resume';
 import GitHubLogo from './images/github.png';
 import LinkedInLogo from './images/linkedin.png';
 
@@ -45,6 +46,7 @@ const LeftSide = styled.div`
 `;
 
 const MainContentWrapperHomePage = styled(MainContentWrapper)`
+  height: calc(100% - 100px);
   align-items: center;
 `;
 
@@ -93,6 +95,11 @@ function App() {
           <Route exact path={APP_URLS.TECH}>
             <MainContentWrapper>
               <Tech />
+            </MainContentWrapper>
+          </Route>
+          <Route exact path={APP_URLS.RESUME}>
+            <MainContentWrapper>
+              <Resume />
             </MainContentWrapper>
           </Route>
           <Route exact path={APP_URLS.CONTACT}>

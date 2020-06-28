@@ -21,6 +21,7 @@ export const APP_URLS = {
   PROJECTS: '/projects',
   // ABOUT: '/about',
   TECH: '/tech',
+  RESUME: '/resume',
   CONTACT: '/contact',
 };
 

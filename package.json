@@ -38,6 +38,7 @@
     "devt": "^1.2.4",
     "font-awesome": "^4.7.0",
     "prettier": "^2.0.5",
+    "react-pdf": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1"
   }
