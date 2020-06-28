@@ -10,7 +10,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const Overlay = styled.div`
   background-color: rgba(100, 100, 100, 0.5);
   position: absolute;
-  height: 100%;
+  height: 842px;
   width: 594px;
   display: flex;
   visibility: hidden;
