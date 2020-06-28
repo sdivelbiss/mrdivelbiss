@@ -68,10 +68,10 @@ function App() {
       <ContentWrapper>
         <LeftSide>
           <SocialLink href={'https://github.com/sdivelbiss'} target="_blank">
-            <img src={GitHubLogo} />
+            <img src={GitHubLogo} alt={'Github'} />
           </SocialLink>
           <SocialLink href={'https://www.linkedin.com/in/scottdivelbiss/'} target="_blank">
-            <img src={LinkedInLogo} />
+            <img src={LinkedInLogo} alt={'Linkedin'} />
           </SocialLink>
         </LeftSide>
         <Switch>
