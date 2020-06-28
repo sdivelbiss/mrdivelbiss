@@ -40,7 +40,7 @@ const Icon = styled.i`
 `;
 
 const Resume = () => {
-  const [_, setNumPages] = useState(null);
+  const [, setNumPages] = useState(null);
   const [pageNumber] = useState(1);
 
   const onDocumentLoadSuccess = ({ numPages }) => {
