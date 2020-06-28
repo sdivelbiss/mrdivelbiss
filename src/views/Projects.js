@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import Modal from 'react-bootstrap/Modal';
+import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
+
 import { PROJECTS } from '../config/AppConstants';
 
 const StyledCard = styled(Card)`
@@ -15,8 +18,8 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const ProjectItem = ({ project: { name, description, mainImg, allImages } }) => (
-  <StyledCard>
+const ProjectItem = ({ project: { name, description, mainImg }, onOpenModal }) => (
+  <StyledCard onClick={() => onOpenModal(name)}>
     <Card.Img variant="top" src={mainImg} />
     <Card.Body>
       <Card.Title>{name}</Card.Title>
@@ -40,14 +43,84 @@ const Label = styled.label`
 `;
 
 export default function Projects() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [projectInModal, setProjectInModal] = useState({});
+  const onOpenModal = (projectName) => {
+    const project = PROJECTS.find((proj) => proj.name === projectName);
+    setIsOpen(true);
+    console.log(project);
+    setProjectInModal(project);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+    setProjectInModal({});
+  };
   return (
     <div>
       <Label>Projects</Label>
       <ProjectWrapper>
         {PROJECTS.map((project, i) => (
-          <ProjectItem key={i} project={project} />
+          <ProjectItem key={i} project={project} onOpenModal={onOpenModal} />
         ))}
       </ProjectWrapper>
+      <ProjectModal isOpen={isOpen} project={projectInModal} handleClose={closeModal} />
     </div>
   );
 }
+
+const StyledModal = styled(Modal)`
+  .modal-dialog {
+    max-width: 1000px;
+  }
+`;
+
+const Tech = styled.span`
+  background-color: #13232f;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const TechWrapper = styled.div`
+  margin: 15px 0;
+`;
+
+const ModalInfo = styled.div`
+  display: flex;
+  padding: 20px 5px;
+  flex-direction: column;
+`;
+
+const ProjectModal = ({
+  project: { name, description, technology = [], allImages = [] },
+  isOpen = false,
+  handleClose,
+}) => {
+  return (
+    <>
+      <StyledModal show={isOpen} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{name}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Carousel>
+            {allImages.map((img, i) => (
+              <Carousel.Item key={i}>
+                <img className="d-block w-100" src={img} alt="First slide" />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+          <ModalInfo>
+            <div>{description}</div>
+            <TechWrapper>
+              {technology.map((tech) => (
+                <Tech>{tech}</Tech>
+              ))}
+            </TechWrapper>
+          </ModalInfo>
+        </Modal.Body>
+      </StyledModal>
+    </>
+  );
+};
