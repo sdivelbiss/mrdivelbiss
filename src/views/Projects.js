@@ -50,7 +50,6 @@ export default function Projects() {
   const onOpenModal = (projectName) => {
     const project = PROJECTS.find((proj) => proj.name === projectName);
     setIsOpen(true);
-    console.log(project);
     setProjectInModal(project);
   };
   const closeModal = () => {
@@ -116,8 +115,8 @@ const ProjectModal = ({
           <ModalInfo>
             <div>{description}</div>
             <TechWrapper>
-              {technology.map((tech) => (
-                <Tech>{tech}</Tech>
+              {technology.map((tech, i) => (
+                <Tech key={i}>{tech}</Tech>
               ))}
             </TechWrapper>
           </ModalInfo>
