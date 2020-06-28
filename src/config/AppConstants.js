@@ -8,6 +8,8 @@ import MediaHubMain from '../images/MediaHub/main.png';
 import MediaHubSecondary from '../images/MediaHub/secondary.png';
 import DataVisualizerMain from '../images/DataVisualizer/main.png';
 import ReChartsMain from '../images/ReCharts/main.png';
+import ReactComponentLibrary from '../images/reactComponentLibrary.png';
+import DevtPreview from '../images/devtPreview.png';
 
 /**
  * App urls.
@@ -50,6 +52,33 @@ export const EXPERIENCE = [
     endDate: '09/2018',
     location: 'San Francisco, CA',
   },
+  {
+    company: 'Credo Ventures',
+    title: 'Analyst',
+    description:
+      'At Credo Ventures my main responsibilities are to do analyses of company portfolios and build the community. These roles also often include networking, keeping an eye on the latest industry trends, and deal screening. I am also involved in due diligence and market analysis with a large focus on company origination and market research.',
+    startDate: '06/2016',
+    endDate: '09/2016',
+    location: 'Prague, Czech Republic',
+  },
+  {
+    company: 'StarLift',
+    title: 'Growth Manager',
+    description:
+      'Worked directly with the founders and CEO in user acquisition, growth planning and research. I was in charge of SEO and growth, using digital marketing techniques I facilitated overseas connections.',
+    startDate: '11/2015',
+    endDate: '06/2016',
+    location: 'Prague, Czech Republic',
+  },
+  {
+    company: 'Global Tooling Services Inc.',
+    title: 'Project Manager',
+    description:
+      'Planning, Executing and closing jobs was my main role at GTS, I organized projects and saw that they were completed on time and done to the clients specifications. I managed a team of engineers to achieve the necessary results that have lead to the rapid growth of the company.',
+    startDate: '05/2015',
+    endDate: '09/2015',
+    location: 'Dongguan, China',
+  },
 ];
 
 export const PROJECTS = [
@@ -83,6 +112,18 @@ export const PROJECTS = [
     mainImg: ReChartsMain,
     allImages: [ReChartsMain],
   },
+  {
+    name: 'React Component Library',
+    description: 'Built a component library for reuse across projects and teams.',
+    mainImg: ReactComponentLibrary,
+    allImages: [ReactComponentLibrary],
+  },
+  {
+    name: 'Devt',
+    description: 'Development tool for feature toggles',
+    mainImg: DevtPreview,
+    allImages: [DevtPreview],
+  },
 ];
 
 export const EDUCATION = [
@@ -113,51 +154,39 @@ export const VOLUNTEER = [
 export const TECH = [
   {
     name: 'Javascript',
-    image: '',
   },
   {
     name: 'Node',
-    image: '',
   },
   {
     name: 'Deno',
-    image: '',
   },
   {
     name: 'React',
-    image: '',
   },
   {
     name: 'Redux',
-    image: '',
   },
   {
     name: 'Docker',
-    image: '',
   },
   {
     name: 'Go',
-    image: '',
   },
   {
     name: 'Git',
-    image: '',
   },
   {
     name: 'Webpack',
-    image: '',
   },
   {
     name: 'Storybook',
-    image: '',
   },
   {
     name: 'Jest',
-    image: '',
   },
   {
     name: 'Elastic Search',
-    image: '',
   },
 ];
 

@@ -9,9 +9,11 @@ import Experience from './views/Experience';
 import Tech from './views/Tech';
 import Contact from './views/Contact';
 import Projects from './views/Projects';
+import GitHubLogo from './images/github.png';
+import LinkedInLogo from './images/linkedin.png';
 
 const MainAppWrapper = styled.div`
-  margin: 0 10vw;
+  /* margin: 0 10vw; */
   height: 100vh;
   display: grid;
   grid-template-rows: 100px 1fr;
@@ -25,42 +27,82 @@ const MainContentWrapper = styled.div`
   align-items: flex-start;
 `;
 
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 10vw 1fr;
+  margin: 0 10vw 0 0;
+`;
+
+const LeftSide = styled.div`
+  display: flex;
+  height: fit-content;
+  position: sticky;
+  top: 45vh;
+  flex-direction: column;
+  padding: 0 2vw;
+  /* justify-content: center; */
+  /* align-items: center; */
+`;
+
 const MainContentWrapperHomePage = styled(MainContentWrapper)`
   align-items: center;
+`;
+
+const SocialLink = styled.a`
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+  img {
+    width: 35px;
+    height: auto;
+    margin-bottom: 20px;
+  }
 `;
 
 function App() {
   return (
     <MainAppWrapper className="app">
       <Nav />
-      <Switch>
-        <Route exact path={APP_URLS.HOME}>
-          <MainContentWrapperHomePage>
-            <Home />
-          </MainContentWrapperHomePage>
-        </Route>
-        <Route exact path={APP_URLS.EXPERIENCE}>
-          <MainContentWrapper>
-            <Experience />
-          </MainContentWrapper>
-        </Route>
-        <Route exact path={APP_URLS.PROJECTS}>
-          <MainContentWrapper>
-            <Projects />
-          </MainContentWrapper>
-        </Route>
-        <Route exact path={APP_URLS.TECH}>
-          <MainContentWrapper>
-            <Tech />
-          </MainContentWrapper>
-        </Route>
-        <Route exact path={APP_URLS.CONTACT}>
-          <MainContentWrapper>
-            <Contact />
-          </MainContentWrapper>
-        </Route>
-        <Route component={Error404} />
-      </Switch>
+      <ContentWrapper>
+        <LeftSide>
+          <SocialLink href={'https://github.com/sdivelbiss'} target="_blank">
+            <img src={GitHubLogo} />
+          </SocialLink>
+          <SocialLink href={'https://www.linkedin.com/in/scottdivelbiss/'} target="_blank">
+            <img src={LinkedInLogo} />
+          </SocialLink>
+        </LeftSide>
+        <Switch>
+          <Route exact path={APP_URLS.HOME}>
+            <MainContentWrapperHomePage>
+              <Home />
+            </MainContentWrapperHomePage>
+          </Route>
+          <Route exact path={APP_URLS.EXPERIENCE}>
+            <MainContentWrapper>
+              <Experience />
+            </MainContentWrapper>
+          </Route>
+          <Route exact path={APP_URLS.PROJECTS}>
+            <MainContentWrapper>
+              <Projects />
+            </MainContentWrapper>
+          </Route>
+          <Route exact path={APP_URLS.TECH}>
+            <MainContentWrapper>
+              <Tech />
+            </MainContentWrapper>
+          </Route>
+          <Route exact path={APP_URLS.CONTACT}>
+            <MainContentWrapper>
+              <Contact />
+            </MainContentWrapper>
+          </Route>
+          <Route component={Error404} />
+        </Switch>
+      </ContentWrapper>
     </MainAppWrapper>
   );
 }

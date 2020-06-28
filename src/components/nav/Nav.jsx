@@ -9,6 +9,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  padding: 0 10vw;
   position: sticky;
   background-color: #fff;
   top: 0px;
