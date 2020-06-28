@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
+import { pdfjs, Document, Page } from 'react-pdf';
 import { Link } from 'react-router-dom';
-import { pdfjs } from 'react-pdf';
 import styled from 'styled-components';
 import resumePDF from '../docs/resume.pdf';
 
-// Setup
+// eslint-disable-next-line
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Overlay = styled.div`
