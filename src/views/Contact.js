@@ -78,7 +78,7 @@ const StyledTextArea = styled.textarea`
 
 export default function Contact() {
   return (
-    <StyledForm action="/" method="post" data-netlify="true">
+    <StyledForm action="/" method="post" data-netlify="true" netlify netlify-honeypot="bot-field">
       <div>
         <div>
           <StyledLabel>First Name</StyledLabel>
@@ -103,6 +103,7 @@ export default function Contact() {
       <StyledButton type="submit" className="button button-block">
         Submit
       </StyledButton>
+      <input type="hidden" name="form-name" value="contact" />
     </StyledForm>
   );
 }
