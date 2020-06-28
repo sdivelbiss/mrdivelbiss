@@ -80,23 +80,23 @@ const StyledTextArea = styled.textarea`
 export default function Contact() {
   return (
     <StyledForm action="/" method="post" data-netlify="true">
-      <div class="top-row">
-        <div class="field-wrap">
+      <div>
+        <div>
           <StyledLabel>First Name</StyledLabel>
           <StyledInput type="text" autocomplete="off" />
         </div>
 
-        <div class="field-wrap">
+        <div>
           <StyledLabel>Last Name</StyledLabel>
           <StyledInput type="text" autocomplete="off" />
         </div>
       </div>
 
-      <div class="field-wrap">
+      <div>
         <StyledLabel>Email Address</StyledLabel>
         <StyledInput type="email" autocomplete="off" />
       </div>
-      <div class="field-wrap">
+      <div>
         <StyledLabel>Message</StyledLabel>
         <StyledTextArea autocomplete="off" />
       </div>

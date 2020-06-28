@@ -138,16 +138,16 @@ export default function Tech() {
       <div>
         <Label>People I Follow</Label>
         <Wrapper>
-          {PEOPLE_I_FOLLOW.map((person) => (
-            <PeopleIFollow person={person} />
+          {PEOPLE_I_FOLLOW.map((person, i) => (
+            <PeopleIFollow person={person} key={i} />
           ))}
         </Wrapper>
       </div>
       <div>
         <Label>Projects I Follow</Label>
         <Wrapper>
-          {PROJECT_I_FOLLOW.map((project) => (
-            <ProjectIFollow project={project} />
+          {PROJECT_I_FOLLOW.map((project, i) => (
+            <ProjectIFollow project={project} key={i} />
           ))}
         </Wrapper>
       </div>
