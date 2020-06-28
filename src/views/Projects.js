@@ -11,7 +11,9 @@ const StyledCard = styled(Card)`
   margin: 10px;
   box-shadow: 0px 40px 72px -40px rgba(158, 158, 158, 0.66);
   border-radius: 8px;
+  transition: 0.5s all;
   &:hover {
+    background-color: #dadaf8;
     transform: scale(1.01);
     box-shadow: 0px 56px 50px -30px rgba(150, 149, 149, 0.66);
     cursor: pointer;
