@@ -14,7 +14,6 @@ const StyledLabel = styled.label`
   left: 13px;
   color: #333;
   transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
   pointer-events: none;
   font-size: 22px;
 `;
